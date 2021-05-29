@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "702017732047",
+    "firebase_url": "https://muahangdientu-default-rtdb.firebaseio.com",
+    "project_id": "muahangdientu",
+    "storage_bucket": "muahangdientu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702017732047:android:70af6bcb86c1a34592a6ba",
+        "android_client_info": {
+          "package_name": "com.example.banhangdientu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702017732047-od8p9664c3o2qi19moev5u42hspnrb9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2g2Foyw2DBhTN9EqOBBq65jwjeascsD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702017732047-od8p9664c3o2qi19moev5u42hspnrb9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

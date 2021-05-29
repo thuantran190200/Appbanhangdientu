@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_trangchu"
+        android:title="Trang chủ"
+        android:icon="@color/yellow"/>
+    <item
+        android:id="@+id/nav_danhmuc"
+        android:title="Danh mục"
+        android:icon="@color/OrangeRed"/>
+    <item
+        android:id="@+id/nav_giohang"
+        android:title="Giỏ hàng"
+        android:icon="@color/SkyBlue"/>
+    <item
+        android:id="@+id/nav_giaohang"
+        android:title="Tiến độ giao hàng"
+        android:icon="@color/OrangeRed"/>
+    <item
+        android:id="@+id/nav_thongtin"
+        android:title="Thông tin cá nhân"
+        android:icon="@color/red"/>
+</menu>

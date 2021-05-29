@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Themsanpham">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/btn_back_addsp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@color/yellow"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_back_addsp"
+            android:id="@+id/anhsanpham"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/tv_samsung"
+            android:layout_marginBottom="20dp"/>
+        <EditText
+            android:id="@+id/edit_tensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anhsanpham"
+            android:layout_marginTop="5dp"
+            android:hint="Tên sản phẩm"/>
+        <EditText
+            android:id="@+id/edit_giasp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_tensp"
+            android:layout_marginTop="5dp"
+            android:hint="Giá sản phẩm"/>
+        <EditText
+            android:id="@+id/edit_soluongsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_giasp"
+            android:layout_marginTop="5dp"
+            android:hint="Số lượng sản phẩm có trong kho"/>
+        <Spinner
+            android:id="@+id/edit_thuonghieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_soluongsp"
+            android:layout_marginTop="5dp" />
+        <Spinner
+            android:id="@+id/edit_loaisp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_thuonghieu"
+            android:layout_marginTop="5dp" />
+        <EditText
+            android:id="@+id/edit_mota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_loaisp"
+            android:layout_marginTop="5dp"
+            android:hint="Mô tả sản phẩm"/>
+        <Spinner
+            android:id="@+id/edit_madein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_mota"
+            android:layout_marginTop="5dp" />
+        <EditText
+            android:id="@+id/edit_diachi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_madein"
+            android:layout_marginTop="5dp"
+            android:hint="Địa chỉ cửa hàng"/>
+        <EditText
+            android:id="@+id/edit_sdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_diachi"
+            android:layout_marginTop="5dp"
+            android:hint="số điện thoạt của hàng"/>
+        <Button
+            android:id="@+id/dangsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_sdt"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/Black"
+            android:text="Đăng sản phẩm"/>
+        <Button
+            android:id="@+id/btn_huy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dangsp"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/Black"
+            android:text="Hủy"/>
+
+    </RelativeLayout>
+
+</ScrollView>
