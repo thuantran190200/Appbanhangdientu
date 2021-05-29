@@ -4,21 +4,21 @@
     <item
         android:id="@+id/nav_trangchu"
         android:title="Trang chủ"
-        android:icon="@color/yellow"/>
+        android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/nav_danhmuc"
         android:title="Danh mục"
-        android:icon="@color/OrangeRed"/>
+        android:icon="@drawable/ic_menu"/>
     <item
         android:id="@+id/nav_giohang"
         android:title="Giỏ hàng"
-        android:icon="@color/SkyBlue"/>
+        android:icon="@drawable/ic_action_cart"/>
     <item
         android:id="@+id/nav_giaohang"
-        android:title="Tiến độ giao hàng"
-        android:icon="@color/OrangeRed"/>
+        android:title="QT Giao hàng"
+        android:icon="@drawable/icon_truck"/>
     <item
         android:id="@+id/nav_thongtin"
-        android:title="Thông tin cá nhân"
-        android:icon="@color/red"/>
+        android:title="Tôi"
+        android:icon="@drawable/ic_action_user"/>
 </menu>
