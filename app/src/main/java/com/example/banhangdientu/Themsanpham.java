@@ -121,14 +121,12 @@ public class Themsanpham extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Uri downloadUri = task.getResult();
                                 Toast.makeText(Themsanpham.this, "Thành Công", Toast.LENGTH_SHORT).show();
-                                //Log.d("AAAA",down+"");
 
                                 String key = Mdata.push().getKey();
                                 Sanpham sanpham = new Sanpham(key, String.valueOf(downloadUri),tensp.getText().toString(),gia.getText().toString(),soluong.getText().toString()
                                 ,thuonghieu.getSelectedItem().toString(),danhmuc.getSelectedItem().toString(),mota.getText().toString(),madein.getSelectedItem().toString()
                                 ,diachi.getText().toString(),sdt.getText().toString());
 
-                                //tạo node trên database
 
 
                                 Mdata.child(key).setValue(sanpham, new DatabaseReference.CompletionListener() {
