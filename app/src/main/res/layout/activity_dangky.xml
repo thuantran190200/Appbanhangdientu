@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_dk"
         android:hint="Tên đăng nhập"
+        android:maxLength="300"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"/>
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dk_tendn"
         android:hint="Họ tên"
+        android:maxLength="50"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"/>
@@ -58,7 +60,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dk_gioitinh"
-        android:hint="Mật khẩu"
+        android:hint="Mật khẩu (Tối đa 12-16 ký tự)"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        app:passwordToggleEnabled="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"/>
@@ -69,6 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dk_matkhau"
         android:hint="Số điện thoại"
+        android:inputType="phone"
+        android:maxLength="10"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"/>
@@ -79,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dk_sdt"
         android:hint="Địa chỉ"
+        android:maxLength="300"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"/>
@@ -91,6 +99,16 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/black"
         android:backgroundTint="@color/yellow"
-        android:textStyle="bold"
+        android:fontFamily="@font/bungee"
         android:text="Đăng ký"/>
+
+    <Button
+        android:id="@+id/thoat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_dangky"
+        android:layout_marginTop="5dp"
+        android:text="Thoát"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"/>
 </RelativeLayout>

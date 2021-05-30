@@ -10,13 +10,26 @@
         android:id="@+id/btn_themsanpham"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
         android:text="Đăng sản phẩm"/>
+    <Button
+        android:id="@+id/btn_capnhatsp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:text="Cập nhật sản phẩm"/>
 
+    <Button
+        android:id="@+id/btn_dangnhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:layout_marginTop="500dp"/>
     <Button
         android:id="@+id/btn_dangkytk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đăng ký tài khoản"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="550dp"/>
 
 </FrameLayout>

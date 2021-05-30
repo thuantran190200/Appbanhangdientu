@@ -39,12 +39,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_tensp"
             android:layout_marginTop="5dp"
+            android:inputType="numberDecimal"
             android:hint="Giá sản phẩm"/>
         <EditText
             android:id="@+id/edit_soluongsp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_giasp"
+            android:inputType="number"
             android:layout_marginTop="5dp"
             android:hint="Số lượng sản phẩm có trong kho"/>
         <Spinner
@@ -84,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_diachi"
+            android:inputType="phone"
             android:layout_marginTop="5dp"
             android:hint="số điện thoạt của hàng"/>
         <Button
@@ -96,7 +99,7 @@
             android:textColor="@color/Black"
             android:text="Đăng sản phẩm"/>
         <Button
-            android:id="@+id/btn_huy"
+            android:id="@+id/btn_huys"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/dangsp"

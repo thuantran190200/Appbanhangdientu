@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -38,7 +39,8 @@ public class Themsanpham extends AppCompatActivity {
 
 
     private static final int SELECT_PICTURE = 1;
-    Button btn_dangsp;
+    ImageButton back;
+    Button btn_dangsp,btn_thoat;
     ImageView themhinhsp;
     Spinner danhmuc, madein,thuonghieu;
     EditText tensp,gia,soluong,mota,diachi,sdt;
@@ -51,7 +53,8 @@ public class Themsanpham extends AppCompatActivity {
 
         Mdata = FirebaseDatabase.getInstance().getReference().child("Sanpham");
 
-
+        back = findViewById(R.id.btn_back_addsp);
+        btn_thoat = findViewById(R.id.btn_huys);
         danhmuc = findViewById(R.id.edit_loaisp);
         madein = findViewById(R.id.edit_madein);
         thuonghieu = findViewById(R.id.edit_thuonghieu);
@@ -75,6 +78,19 @@ public class Themsanpham extends AppCompatActivity {
         thuonghieu.setAdapter(hang_adapter);
 
         StorageReference storageRef = storage.getReferenceFromUrl("gs://muahangdientu.appspot.com");
+
+        btn_thoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         themhinhsp.setOnClickListener(new View.OnClickListener() {
             @Override

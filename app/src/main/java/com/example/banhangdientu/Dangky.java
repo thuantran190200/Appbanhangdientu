@@ -38,6 +38,7 @@ public class Dangky extends AppCompatActivity {
         matkhau = findViewById(R.id.dk_matkhau);
         sdt = findViewById(R.id.dk_sdt);
         diachi = findViewById(R.id.dk_diachi);
+        btn_huy = findViewById(R.id.thoat);
         back = findViewById(R.id.btn_thoat);
         //----------------------------------------
 
@@ -47,6 +48,12 @@ public class Dangky extends AppCompatActivity {
 
         //------------------------------
         back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btn_huy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

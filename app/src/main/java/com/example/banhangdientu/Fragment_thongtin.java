@@ -17,7 +17,7 @@ import android.widget.Button;
  */
 public class Fragment_thongtin extends Fragment {
 
-    Button btn_themsp,btn_dktk;
+    Button btn_themsp,btn_dktk,btn_dangnhap1;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,6 +67,7 @@ public class Fragment_thongtin extends Fragment {
         //---------
         btn_themsp =(Button) view.findViewById(R.id.btn_themsanpham);
         btn_dktk = (Button) view.findViewById(R.id.btn_dangkytk);
+        btn_dangnhap1 = (Button) view.findViewById(R.id.btn_dangnhap);
 
         //---------
         btn_themsp.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +83,14 @@ public class Fragment_thongtin extends Fragment {
             public void onClick(View v) {
                 Intent intent1 = new Intent(getActivity(), Dangky.class);
                 startActivity(intent1);
+            }
+        });
+
+        btn_dangnhap1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(), Dangnhap.class);
+                startActivity(intent2);
             }
         });
 
