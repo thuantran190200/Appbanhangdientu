@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_thongtin">
+    tools:context=".Fragment_thongtin_Khachhang">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="160dp"/>
         <TextView
-            android:id="@+id/show_hoten"
+            android:id="@+id/show_hoten1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -31,22 +31,23 @@
             android:fontFamily="@font/bungee"/>
 
         <TextView
-            android:id="@+id/show_sdt"
+            android:id="@+id/show_sdt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/show_hoten"
+            android:layout_below="@+id/show_hoten1"
             android:gravity="center"
             android:textSize="20dp"
             android:text="01234456789"/>
 
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/SpringGreen"
-        android:layout_marginTop="240dp"
-        android:orientation="vertical">
+        android:layout_marginTop="240dp">
+
         <Button
             android:id="@+id/btn_ttcn"
             android:layout_width="400dp"
@@ -71,21 +72,16 @@
             android:textColor="@color/black"/>
     </RelativeLayout>
 
-
-
     <Button
-        android:id="@+id/btn_dangnhap"
+        android:id="@+id/btn_dangxuat_kh"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_marginTop="600dp"
         android:layout_marginLeft="110dp"
-        android:text="Đăng nhập"
-        android:layout_marginTop="500dp"/>
-    <Button
-        android:id="@+id/btn_dangkytk"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="110dp"
-        android:text="Đăng ký tài khoản"
-        android:layout_marginTop="550dp"/>
+        android:backgroundTint="@color/red"
+        android:text="Đăng xuất"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/bungee"/>
 
 </FrameLayout>

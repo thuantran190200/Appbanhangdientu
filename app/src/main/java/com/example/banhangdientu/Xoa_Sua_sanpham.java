@@ -2,8 +2,10 @@ package com.example.banhangdientu;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,9 +24,12 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -37,13 +42,14 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
 
     private static final int SELECT_PICTURE = 1;
     ImageButton back;
-    Button btn_capnhatsp,btn_thoat;
+    Button btn_capnhatsp,btn_thoat, btnxoasp;
     ImageView themhinhsp;
     Spinner danhmuc, madein,thuonghieu;
     EditText tensp,gia,soluong,mota,diachi,sdt;
-    TextView masp;
+    //TextView masp;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     DatabaseReference reference;
+    String idmasp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +60,6 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Sanpham");
 
         back = findViewById(R.id.btn_back_cnsp);
-        btn_thoat = findViewById(R.id.btn_xoasp);
         danhmuc = findViewById(R.id.edit_cnloaisp);
         madein = findViewById(R.id.edit_cnmadein);
         thuonghieu = findViewById(R.id.edit_cnthuonghieu);
@@ -66,7 +71,7 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         sdt = findViewById(R.id.edit_cnsdt);
         themhinhsp =findViewById(R.id.cnanhsanpham);
         btn_capnhatsp = findViewById(R.id.btn_capnhatsp1);
-        masp = findViewById(R.id.ma_sp);
+        //masp = findViewById(R.id.ma_sp);
 
         String dm[] = {"Tivi","Loa","Amly","Linh kiện","Dàn máy"};
         ArrayAdapter dm_adapter = new ArrayAdapter(Xoa_Sua_sanpham.this, android.R.layout.simple_spinner_item,dm);
@@ -101,7 +106,16 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
             }
         });
 
-        btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
+
+        btnxoasp = findViewById(R.id.btn_xoasp);
+        btnxoasp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xoasp();
+            }
+        });
+
+     /*   btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -168,7 +182,7 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
                     Toast.makeText(Xoa_Sua_sanpham.this, "Vui lòng điền đầy đủ!!!", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
     private void loaddata(){
         Intent intent = getIntent();
@@ -182,6 +196,36 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         mota.setText(intent.getStringExtra("mota"));
         diachi.setText(intent.getStringExtra("diachi"));
         sdt.setText(intent.getStringExtra("sdt"));
-        masp.setText(intent.getStringExtra("id"));
+        //masp.setText(intent.getStringExtra("id"));
+        idmasp = intent.getStringExtra("id");
+    }
+    private  void xoasp(){
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == DialogInterface.BUTTON_POSITIVE) {
+                    reference = FirebaseDatabase.getInstance().getReference().child("sanpham");
+                    Query query = reference.orderByChild("id").equalTo(idmasp);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                    ds.getRef().removeValue();
+                                }
+                                Toast.makeText(Xoa_Sua_sanpham.this, "Xóa sản phẩm thành công", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(Xoa_Sua_sanpham.this);
+        builder.setMessage("Bạn muốn xóa sản phẩm?").setPositiveButton("Yes", onClickListener)
+                .setNegativeButton("No", onClickListener).show();
     }
 }

@@ -23,7 +23,7 @@
             android:layout_height="100dp"
             android:layout_below="@+id/btn_back_cnsp"
             android:id="@+id/cnanhsanpham"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/tv_samsung"
             android:layout_marginBottom="20dp"/>
         <EditText

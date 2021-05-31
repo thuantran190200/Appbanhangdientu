@@ -3,19 +3,24 @@ package com.example.banhangdientu;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Toi#newInstance} factory method to
+ * Use the {@link Fragment_thongtin_Khachhang#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Toi extends Fragment {
+public class Fragment_thongtin_Khachhang extends Fragment {
 
+    TextView hoten1, sdt1;
+    Button btn_ttcanhan, btn_doi_mk, btn_dang_xuat;
+
+    //----------------------------
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -25,7 +30,7 @@ public class Toi extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Toi() {
+    public Fragment_thongtin_Khachhang() {
         // Required empty public constructor
     }
 
@@ -35,11 +40,11 @@ public class Toi extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Toi.
+     * @return A new instance of fragment Fragment_thongtin_Khachhang.
      */
     // TODO: Rename and change types and number of parameters
-    public static Toi newInstance(String param1, String param2) {
-        Toi fragment = new Toi();
+    public static Fragment_thongtin_Khachhang newInstance(String param1, String param2) {
+        Fragment_thongtin_Khachhang fragment = new Fragment_thongtin_Khachhang();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,29 +65,27 @@ public class Toi extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_toi, container, false);
-        if (MainActivity.ktdangnhap == false){
-            Fragment_thongtin thongtin = new Fragment_thongtin();
-            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.ttttt, thongtin);
-            fragmentTransaction.commit();
-        }
+        View view = inflater.inflate(R.layout.fragment_thongtin__khachhang, container, false);
+
+        hoten1 = (TextView) view.findViewById(R.id.show_hoten1);
+        sdt1 = (TextView) view.findViewById(R.id.show_sdt1);
+        hoten1.setText(MainActivity.hoten);
+        sdt1.setText(MainActivity.sdt);
+        btn_dang_xuat = (Button) view.findViewById(R.id.btn_dangxuat_kh);
+
+
+        //--------------------------------------------------------------------------------
+        btn_dang_xuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);
+                //restarApp();
+            }
+        });
+
+
+
 
         return view;
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(MainActivity.ktdangnhap == true && MainActivity.loaitk.equals("admin")){
-            Fragment_thongtin_Nhanvien thongtinNhanvien = new Fragment_thongtin_Nhanvien();
-            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.ttttt,thongtinNhanvien);
-            fragmentTransaction.commit();
-        }else if(MainActivity.ktdangnhap == true && MainActivity.loaitk.equals("khachhang")) {
-            Fragment_thongtin_Khachhang thongtinKhachhang = new Fragment_thongtin_Khachhang();
-            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.ttttt, thongtinKhachhang);
-            fragmentTransaction.commit();
-        }
     }
 }

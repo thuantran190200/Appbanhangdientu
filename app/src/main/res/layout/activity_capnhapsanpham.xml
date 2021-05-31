@@ -6,11 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Capnhapsanpham">
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:backgroundTint="@color/yellow"
         android:src="@drawable/ic_arrow_back"/>
     <GridView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:id="@+id/grib_view_loadspthem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

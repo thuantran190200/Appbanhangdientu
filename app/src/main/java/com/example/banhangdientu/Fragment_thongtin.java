@@ -68,19 +68,13 @@ public class Fragment_thongtin extends Fragment {
 
 
         //---------
-        btn_themsp =(Button) view.findViewById(R.id.btn_themsanpham);
+
         btn_dktk = (Button) view.findViewById(R.id.btn_dangkytk);
         btn_dangnhap1 = (Button) view.findViewById(R.id.btn_dangnhap);
-        btn_capnhatsp = (Button) view.findViewById(R.id.btn_capnhatsp);
+
 
         //---------
-        btn_themsp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Themsanpham.class);
-                startActivity(intent);
-            }
-        });
+
 
         btn_dktk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,13 +88,6 @@ public class Fragment_thongtin extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(getActivity(), Dangnhap.class);
-                startActivity(intent2);
-            }
-        });
-        btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(getActivity(), Capnhapsanpham.class);
                 startActivity(intent2);
             }
         });
