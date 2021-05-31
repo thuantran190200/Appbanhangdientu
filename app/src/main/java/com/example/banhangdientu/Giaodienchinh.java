@@ -36,7 +36,7 @@ public class Giaodienchinh extends AppCompatActivity {
                         loadFragment(fragment);
                         return true;
                     case R.id.nav_thongtin:
-                        fragment = new Fragment_thongtin();
+                        fragment = new Toi();
                         loadFragment(fragment);
                         return true;
                 }

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +36,7 @@ public class Fragment_trangchu extends Fragment {
     ArrayList<Sanpham> listsanpham = new ArrayList<>();
     SanphamAdapter sanphamAdapter;
     GridView gridView;
-
+    Button timkiem;
     //**************************************
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,6 +86,16 @@ public class Fragment_trangchu extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trangchu, container, false);
+
+        timkiem = (Button) view.findViewById(R.id.timkiem);
+        timkiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Timkiem_sp.class);
+                startActivity(intent);
+            }
+        });
+
         DatafromFirebase();
         gridView = (GridView) view.findViewById(R.id.grib_view);
         sanphamAdapter=  new SanphamAdapter(getContext(), listsanpham);

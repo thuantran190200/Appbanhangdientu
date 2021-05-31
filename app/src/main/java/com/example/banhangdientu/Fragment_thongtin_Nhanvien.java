@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -122,7 +123,8 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
         btn_dang_xuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                restarApp();
+                System.exit(0);
+                //restarApp();
             }
         });
 

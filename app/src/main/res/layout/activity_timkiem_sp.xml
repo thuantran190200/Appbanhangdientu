@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Capnhapsanpham">
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_arrow_back"/>
-    <GridView
-        android:layout_marginTop="50dp"
-        android:id="@+id/grib_view_loadspthem"
+    tools:context=".Timkiem_sp">
+
+    <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numColumns="2"/>
+        android:hint="tìm kiếm"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/show_sp_timkiem"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

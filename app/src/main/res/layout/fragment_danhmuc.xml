@@ -6,9 +6,9 @@
     tools:context=".Fragment_danhmuc">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridView
+        android:id="@+id/grib_view_dm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="131516546516516165" />
-
+        android:layout_height="wrap_content"
+        android:numColumns="2"/>
 </FrameLayout>

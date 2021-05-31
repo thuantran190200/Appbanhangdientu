@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Banhangdientu">
-        <activity android:name=".Thongtincanhan"></activity>
+        <activity android:name=".Timkiem_sp"></activity>
+        <activity android:name=".Danhsach_danhmuc" />
+        <activity android:name=".Xoa_Sua_sanpham" />
+        <activity android:name=".Thongtincanhan" />
         <activity android:name=".Capnhapsanpham" />
         <activity android:name=".Dangnhap" />
         <activity android:name=".Dangky" />

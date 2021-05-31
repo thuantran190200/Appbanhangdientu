@@ -3,13 +3,14 @@ package com.example.banhangdientu;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,39 +21,36 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Capnhapsanpham extends AppCompatActivity {
+public class Timkiem_sp extends AppCompatActivity {
 
+
+    RecyclerView recyclerView;
+    EditText editText;
     DatabaseReference reference;
-    ArrayList<Sanpham> listsanpham = new ArrayList<>();
-    SanphamAdapter sanphamAdapter;
-    GridView gridView;
+    ArrayList<Sanpham> listsanpham;
+    RecyclerView_Search recyclerView_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_capnhapsanpham);
+        setContentView(R.layout.activity_timkiem_sp);
 
         DatafromFirebase();
-        gridView = findViewById(R.id.grib_view_loadspthem);
-        sanphamAdapter=  new SanphamAdapter(Capnhapsanpham.this, listsanpham);
-        gridView.setAdapter(sanphamAdapter);
-        sanphamAdapter.notifyDataSetChanged();
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        editText = findViewById(R.id.search);
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Capnhapsanpham.this, Xoa_Sua_sanpham.class);
-                intent.putExtra("anhsp",listsanpham.get(position).getAnhsp());
-                intent.putExtra("tensp",listsanpham.get(position).getTensp());
-                intent.putExtra("giasp",listsanpham.get(position).getGiasp());
-                intent.putExtra("soluongsp",listsanpham.get(position).getSoluongsp());
-                intent.putExtra("thuonghieu",listsanpham.get(position).getThuonghieusp());
-                intent.putExtra("loaisp",listsanpham.get(position).getLoaisp());
-                intent.putExtra("mota",listsanpham.get(position).getMota());
-                intent.putExtra("madein",listsanpham.get(position).getMadein());
-                intent.putExtra("diachi",listsanpham.get(position).getDiachi());
-                intent.putExtra("sodienthoai",listsanpham.get(position).getSdt());
-                intent.putExtra("id",listsanpham.get(position).getId());
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                startActivity(intent);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                recyclerView_search.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -66,6 +64,7 @@ public class Capnhapsanpham extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()){
+                    //  Log.d("abc", "onDataChange: vao day");
                     String key = ds.getKey();
                     String anhsp = ds.child("anhsp").getValue(String.class);
                     String tensp = ds.child("tensp").getValue(String.class);
@@ -80,10 +79,17 @@ public class Capnhapsanpham extends AppCompatActivity {
 
 
 
+
                     Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp,soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
                     listsanpham.add(sanpham);
                 }
-                sanphamAdapter.notifyDataSetChanged();
+                recyclerView = findViewById(R.id.show_sp_timkiem);
+                recyclerView.setHasFixedSize(true);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Timkiem_sp.this);
+                recyclerView_search = new RecyclerView_Search(Timkiem_sp.this, listsanpham);
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setAdapter(recyclerView_search);
+                recyclerView_search.notifyDataSetChanged();
             }
 
             @Override

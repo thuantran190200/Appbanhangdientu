@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Xoa_Sua_sanpham">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/btn_back_cnsp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@color/yellow"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_back_cnsp"
+            android:id="@+id/cnanhsanpham"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/tv_samsung"
+            android:layout_marginBottom="20dp"/>
+        <EditText
+            android:id="@+id/edit_cntensp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cnanhsanpham"
+            android:layout_marginTop="5dp"
+            android:hint="Tên sản phẩm"/>
+        <EditText
+            android:id="@+id/edit_cngiasp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cntensp"
+            android:layout_marginTop="5dp"
+            android:inputType="numberDecimal"
+            android:hint="Giá sản phẩm"/>
+        <EditText
+            android:id="@+id/edit_cnsoluongsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cngiasp"
+            android:inputType="number"
+            android:layout_marginTop="5dp"
+            android:hint="Số lượng sản phẩm có trong kho"/>
+        <Spinner
+            android:id="@+id/edit_cnthuonghieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnsoluongsp"
+            android:layout_marginTop="5dp" />
+        <Spinner
+            android:id="@+id/edit_cnloaisp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnthuonghieu"
+            android:layout_marginTop="5dp" />
+        <EditText
+            android:id="@+id/edit_cnmota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnloaisp"
+            android:layout_marginTop="5dp"
+            android:hint="Mô tả sản phẩm"/>
+        <Spinner
+            android:id="@+id/edit_cnmadein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnmota"
+            android:layout_marginTop="5dp" />
+        <EditText
+            android:id="@+id/edit_cndiachi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnmadein"
+            android:layout_marginTop="5dp"
+            android:hint="Địa chỉ cửa hàng"/>
+        <EditText
+            android:id="@+id/edit_cnsdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cndiachi"
+            android:inputType="phone"
+            android:layout_marginTop="5dp"
+            android:hint="số điện thoạt của hàng"/>
+        <Button
+            android:id="@+id/btn_capnhatsp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_cnsdt"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/Black"
+            android:text="Cập nhật sản phẩm"/>
+        <Button
+            android:id="@+id/btn_xoasp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_capnhatsp1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/Black"
+            android:text="Xóa sản phẩm"/>
+        <TextView
+            android:id="@+id/ma_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_xoasp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
