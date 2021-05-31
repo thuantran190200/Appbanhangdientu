@@ -96,9 +96,9 @@ public class Fragment_trangchu extends Fragment {
                 Intent intent = new Intent(getActivity(), ChitietSanpham.class);
                 intent.putExtra("anhsp",listsanpham.get(position).getAnhsp());
                 intent.putExtra("tensp",listsanpham.get(position).getTensp());
-                intent.putExtra("giasp",listsanpham.get(position).getTensp());
-                intent.putExtra("soluongsp",listsanpham.get(position).getTensp());
-                intent.putExtra("mota",listsanpham.get(position).getTensp());
+                intent.putExtra("giasp",listsanpham.get(position).getGiasp());
+                intent.putExtra("soluongsp",listsanpham.get(position).getSoluongsp());
+                intent.putExtra("mota",listsanpham.get(position).getMota());
                 startActivity(intent);
             }
         });

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +65,13 @@ public class Fragment_thongtin extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_thongtin, container, false);
+
+        if (MainActivity.ktdangnhap ==false){
+            Fragment_thongtin thongtin = new Fragment_thongtin();
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.framelayoutMe, thongtin);
+            fragmentTransaction.commit();
+        }
         //---------
         btn_themsp =(Button) view.findViewById(R.id.btn_themsanpham);
         btn_dktk = (Button) view.findViewById(R.id.btn_dangkytk);

@@ -17,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
     Animation topAnim, bottomAnim;
     ImageView image;
     TextView logo;
+    public static String hoten;
+    public static String sdt;
+    public static String gioitinh;
+    public static String diachi;
+    public static String loaitk;
+    public static Boolean ktdangnhap = false;
     private static int SPLASH_SCREEN = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
