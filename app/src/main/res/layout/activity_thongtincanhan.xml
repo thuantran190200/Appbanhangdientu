@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/WhiteSmoke"
     tools:context=".Thongtincanhan">
 
     <ImageButton
@@ -14,7 +15,68 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_arrow_back"
         android:backgroundTint="@color/yellow"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:fontFamily="@font/bungee"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="50dp"/>
+    <ImageButton
+        android:id="@+id/img_user"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/logo_user"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="150dp"/>
+    <EditText
+        android:id="@+id/txt_hoten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_user"
+        android:hint="Họ và tên"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
+    <Spinner
+        android:id="@+id/txt_gioitinh"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/txt_hoten"/>
+    <EditText
+        android:id="@+id/txt_sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_gioitinh"
+        android:hint="Số điện thoạt"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
+    <EditText
+        android:id="@+id/txt_diachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_sdt"
+        android:layout_marginTop="20dp"
+        android:hint="Địa chỉ"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <Button
+        android:id="@+id/btn_luu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Lưu lại"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/bungee"
+        android:layout_below="@+id/txt_diachi"/>
 
 </RelativeLayout>

@@ -80,12 +80,13 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
         hoten.setText(MainActivity.hoten);
         sdt.setText(MainActivity.sdt);
 
+
         //---------------------------------------------
         btn_ttcanhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Thongtincanhan.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), Thongtincanhan.class);
+                startActivity(intent);
             }
         });
 
@@ -131,6 +132,7 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
 
         return view;
     }
+
     private void restarApp(){
         //Intent rs = Intent(this.getContext(), MainActivity.class);
     }

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Animation topAnim, bottomAnim;
     ImageView image;
     TextView logo;
+    public static String tendn;
     public static String hoten;
     public static String sdt;
     public static String gioitinh;

@@ -114,12 +114,14 @@ public class Dangnhap extends AppCompatActivity {
                             //startActivity(intent);
 
 
+                            String tendnFromDB = snapshot.child(key).child("tendn").getValue(String.class);
                             String hotenFromDB = snapshot.child(key).child("hoten").getValue(String.class);
                             String gioitinhFromDB = snapshot.child(key).child("gioitinh").getValue(String.class);
                             String sdtFromDB = snapshot.child(key).child("sdt").getValue(String.class);
                             String diachiFromDB = snapshot.child(key).child("diachi").getValue(String.class);
                             String loaitkFromDB = snapshot.child(key).child("loaitk").getValue(String.class);
 
+                            MainActivity.tendn = tendnFromDB;
                             MainActivity.sdt = sdtFromDB;
                             MainActivity.hoten = hotenFromDB;
                             MainActivity.diachi = diachiFromDB;

@@ -69,6 +69,17 @@
             android:text="Đổi mật khẩu                                          >"
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/btn_lichsumuahang"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/btn_doimk"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textStyle="bold"
+            android:text="Lịch sử mua hàng                                  >"
+            android:backgroundTint="@color/yellow"
+            android:textColor="@color/black"/>
     </RelativeLayout>
 
 

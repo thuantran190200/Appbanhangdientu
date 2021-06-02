@@ -1,5 +1,6 @@
 package com.example.banhangdientu;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -71,6 +72,7 @@ public class Fragment_thongtin_Khachhang extends Fragment {
         sdt1 = (TextView) view.findViewById(R.id.show_sdt1);
         hoten1.setText(MainActivity.hoten);
         sdt1.setText(MainActivity.sdt);
+        btn_ttcanhan = (Button) view.findViewById(R.id.btn_ttcn);
         btn_dang_xuat = (Button) view.findViewById(R.id.btn_dangxuat_kh);
 
 
@@ -83,6 +85,13 @@ public class Fragment_thongtin_Khachhang extends Fragment {
             }
         });
 
+        btn_ttcanhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Thongtincanhan.class);
+                startActivity(intent);
+            }
+        });
 
 
 
