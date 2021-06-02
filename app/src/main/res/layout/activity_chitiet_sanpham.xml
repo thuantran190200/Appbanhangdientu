@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
         android:layout_below="@+id/load_giasp"
         android:layout_toRightOf="@+id/txt_kho"
         android:text="Số lượng trong kho"

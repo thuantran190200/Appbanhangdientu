@@ -13,8 +13,8 @@
         android:backgroundTint="@color/yellow"
         android:src="@drawable/ic_arrow_back"/>
     <GridView
+        android:id="@+id/grib_view_loadspthem1"
         android:layout_marginTop="70dp"
-        android:id="@+id/grib_view_loadspthem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="2"/>

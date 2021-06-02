@@ -48,7 +48,7 @@
         android:layout_marginTop="240dp"
         android:orientation="vertical">
         <Button
-            android:id="@+id/btn_ttcn"
+            android:id="@+id/btn_ttcn1"
             android:layout_width="400dp"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
@@ -59,10 +59,10 @@
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"/>
         <Button
-            android:id="@+id/btn_doimk"
+            android:id="@+id/btn_doimk1"
             android:layout_width="400dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/btn_ttcn"
+            android:layout_below="@+id/btn_ttcn1"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:textStyle="bold"
@@ -70,10 +70,10 @@
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"/>
         <Button
-            android:id="@+id/btn_lichsumuahang"
+            android:id="@+id/btn_lichsumuahang1"
             android:layout_width="400dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/btn_doimk"
+            android:layout_below="@+id/btn_doimk1"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:textStyle="bold"

@@ -72,47 +72,41 @@ public class Dangky extends AppCompatActivity {
             public void onClick(View v) {
 
                 reference = FirebaseDatabase.getInstance().getReference().child("User");
-                String ten_dn = tendn.getText().toString();
+                String ten_dn = tendn.getText().toString().trim();
                 String ho_ten = hoten.getText().toString();
                 String mat_khau = matkhau.getText().toString();
                 String gioi_tinh = gioitinh.getSelectedItem().toString();
                 String sdt1 = sdt.getText().toString();
                 String dia_chi = diachi.getText().toString();
                 String loaitk = "khachhang";
+
+
+                //Query kttendn = FirebaseDatabase.getInstance().getReference("User").orderByChild("sdt").equalTo(sdt1);
                 Query ktsdt = FirebaseDatabase.getInstance().getReference("User").orderByChild("sdt").equalTo(sdt1);
                 ktsdt.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                            String tendn =snapshot.child("tendn").getValue(String.class);
-                            if (snapshot.exists())//|| ten_dn.equals(tendn)
-                            {
-                                Toast.makeText(Dangky.this,"Số điện đã được đăng ký", Toast.LENGTH_SHORT).show();
-                            }else {
-                                if(TextUtils.isEmpty(ten_dn)){
-                                    Toast.makeText(Dangky.this,"Vui lòng nhập tên đăng nhập", Toast.LENGTH_SHORT).show();
-                                }
-                                if (TextUtils.isEmpty(ho_ten)){
-                                    Toast.makeText(Dangky.this,"Vui lòng nhập họ và tên", Toast.LENGTH_SHORT).show();
+                        //String tendn =snapshot.child("tendn").getValue(String.class);
+                        if (snapshot.exists())//||
+                        {
+                            Toast.makeText(Dangky.this, "Số điện thoại đã được đăng ký", Toast.LENGTH_SHORT).show();
+                        }
+                        /*if (ten_dn.equals(tendn)){
 
-                                }
-                                if (TextUtils.isEmpty(mat_khau)){
-                                    Toast.makeText(Dangky.this,"Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
-                                }
-                                if (TextUtils.isEmpty(sdt1)){
-                                    Toast.makeText(Dangky.this,"Vui lòng nhập số điện thoại", Toast.LENGTH_SHORT).show();
-                                }
-                                if (TextUtils.isEmpty(dia_chi)){
-                                    Toast.makeText(Dangky.this,"Vui lòng nhập địa chỉ", Toast.LENGTH_SHORT).show();
-                                }else
-                                {
-                                    Userdata userdata = new Userdata(ten_dn, ho_ten, mat_khau, gioi_tinh, sdt1, dia_chi,loaitk);
-                                    reference.child(ten_dn).setValue(userdata);
-                                    Toast.makeText(Dangky.this,"Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }
+                            Toast.makeText(Dangky.this,"Tài khoản tồn tại. Vui lòng nhập tài khoản mới", Toast.LENGTH_SHORT).show();
+
+                        }*/else {
+
+                            if (TextUtils.isEmpty(ten_dn) || TextUtils.isEmpty(ho_ten) || TextUtils.isEmpty(mat_khau) || TextUtils.isEmpty(sdt1) || TextUtils.isEmpty(dia_chi)) {
+                                Toast.makeText(Dangky.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Userdata userdata = new Userdata(ten_dn, ho_ten, mat_khau, gioi_tinh, sdt1, dia_chi, loaitk);
+                                reference.child(ten_dn).setValue(userdata);
+                                Toast.makeText(Dangky.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                                finish();
                             }
+
                         }
 
                     }

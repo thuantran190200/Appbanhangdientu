@@ -73,6 +73,7 @@ public class Fragment_thongtin_Khachhang extends Fragment {
         hoten1.setText(MainActivity.hoten);
         sdt1.setText(MainActivity.sdt);
         btn_ttcanhan = (Button) view.findViewById(R.id.btn_ttcn);
+        btn_doi_mk = (Button) view.findViewById(R.id.btn_doimk);
         btn_dang_xuat = (Button) view.findViewById(R.id.btn_dangxuat_kh);
 
 
@@ -93,6 +94,13 @@ public class Fragment_thongtin_Khachhang extends Fragment {
             }
         });
 
+        btn_doi_mk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new  Intent(getActivity(), Doimatkhau.class);
+                startActivity(intent);
+            }
+        });
 
 
         return view;

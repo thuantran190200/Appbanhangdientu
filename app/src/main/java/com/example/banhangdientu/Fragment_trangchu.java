@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -137,7 +139,7 @@ public class Fragment_trangchu extends Fragment {
                     String loaisp=ds.child("loaisp").getValue(String.class);
                     String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                     String sdt1 = ds.child("sdt").getValue(String.class);
-                    String soluong= ds.child("spluongsp").getValue(String.class);
+                    String soluong= ds.child("soluongsp").getValue(String.class);
                     String madein = ds.child("madein").getValue(String.class);
                     AtomicBoolean isSP = new AtomicBoolean();
                     listsanpham.forEach(sanpham -> {
@@ -149,6 +151,13 @@ public class Fragment_trangchu extends Fragment {
 
                     Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp,soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
                     listsanpham.add(sanpham);
+                    //code sắp xếp theo thứ tự
+                    Collections.sort(listsanpham, new Comparator<Sanpham>() {
+                        @Override
+                        public int compare(Sanpham o1, Sanpham o2) {
+                            return o1.getTensp().compareTo(o2.getTensp());
+                        }
+                    });
                 }
                 sanphamAdapter.notifyDataSetChanged();
             }

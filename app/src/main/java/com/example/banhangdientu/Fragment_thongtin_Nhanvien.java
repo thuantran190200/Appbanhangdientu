@@ -93,8 +93,8 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
         btn_doi_mk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent1 = new Intent(getActivity(), Doimatkhau.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), Doimatkhau.class);
+                startActivity(intent1);
             }
         });
 

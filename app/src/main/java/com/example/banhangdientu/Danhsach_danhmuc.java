@@ -18,6 +18,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicBoolean;
 
  public class Danhsach_danhmuc extends AppCompatActivity {
@@ -59,7 +62,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
              @Override
              public void onDataChange(@NonNull DataSnapshot snapshot) {
                  for(DataSnapshot ds : snapshot.getChildren()){
-                     //  Log.d("abc", "onDataChange: vao day");
+
                      String key = ds.getKey();
                      String anhsp = ds.child("anhsp").getValue(String.class);
                      String tensp = ds.child("tensp").getValue(String.class);
@@ -69,12 +72,26 @@ import java.util.concurrent.atomic.AtomicBoolean;
                      String loaisp=ds.child("loaisp").getValue(String.class);
                      String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                      String sdt1 = ds.child("sdt").getValue(String.class);
-                     String soluong= ds.child("spluongsp").getValue(String.class);
+                     String soluong= ds.child("soluongsp").getValue(String.class);
                      String madein = ds.child("madein").getValue(String.class);
 
                      if (loaisp.equals(tendm)){
                          Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp,soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
                          listsanpham.add(sanpham);
+                         Collections.sort(listsanpham, new Comparator<Sanpham>() {
+                             @Override
+                             public int compare(Sanpham o1, Sanpham o2) {
+                                 if (Integer.parseInt(o1.getGiasp())>Integer.parseInt(o2.getGiasp())){
+                                     return 1;
+                                 }else {
+                                     if (o1.getGiasp()==o2.getGiasp()){
+                                         return 0;
+                                     }else {
+                                         return -1;
+                                     }
+                                 }
+                             }
+                         });
                      }
 
 

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Banhangdientu">
-        <activity android:name=".Doimatkhau"></activity>
+        <activity android:name=".Doimatkhau" />
         <activity android:name=".Timkiem_sp" />
         <activity android:name=".Danhsach_danhmuc" />
         <activity android:name=".Xoa_Sua_sanpham" />

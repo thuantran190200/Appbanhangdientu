@@ -32,7 +32,7 @@ public class Capnhapsanpham extends AppCompatActivity {
         setContentView(R.layout.activity_capnhapsanpham);
 
         DatafromFirebase();
-        gridView = findViewById(R.id.grib_view_loadspthem);
+        gridView = findViewById(R.id.grib_view_loadspthem1);
         sanphamAdapter=  new SanphamAdapter(Capnhapsanpham.this, listsanpham);
         gridView.setAdapter(sanphamAdapter);
         sanphamAdapter.notifyDataSetChanged();

@@ -115,74 +115,13 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
             }
         });
 
-     /*   btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
+        btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //code thêm ràng buộc không để nul
-                if (tensp.getText().toString().length()!=0 && gia.getText().toString().length()!=0 && soluong.getText().toString().length()!=0 ) {
-                    Calendar calendar = Calendar.getInstance();
-                    StorageReference mountainsRef = storageRef.child("imgae" + calendar.getTimeInMillis() + ".png");
-
-                    //code firebase có sẵn lấy về
-                    themhinhsp.setDrawingCacheEnabled(true);
-                    themhinhsp.buildDrawingCache();
-                    Bitmap bitmap = ((BitmapDrawable) themhinhsp.getDrawable()).getBitmap();
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                    byte[] data = baos.toByteArray();
-                    //***********************************
-                    UploadTask uploadTask = mountainsRef.putBytes(data);
-                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful()) {
-                                throw task.getException();
-                            }
-
-                            // Continue with the task to get the download URL
-                            return mountainsRef.getDownloadUrl();
-                        }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful()) {
-                                Uri downloadUri = task.getResult();
-                                Toast.makeText(Xoa_Sua_sanpham.this, "Cập nhật hình thành Công", Toast.LENGTH_SHORT).show();
-
-                                String key = reference.push().getKey();
-                                Sanpham sanpham = new Sanpham(key, String.valueOf(downloadUri),tensp.getText().toString(),gia.getText().toString(),soluong.getText().toString()
-                                        ,thuonghieu.getSelectedItem().toString(),danhmuc.getSelectedItem().toString(),mota.getText().toString(),madein.getSelectedItem().toString()
-                                        ,diachi.getText().toString(),sdt.getText().toString());
-
-
-
-                                reference.child(key).setValue(sanpham, new DatabaseReference.CompletionListener() {
-                                    @Override
-                                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                        if (error != null) {
-                                            Toast.makeText(Xoa_Sua_sanpham.this, "Cập nhật thất bại", Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            Toast.makeText(Xoa_Sua_sanpham.this, "Cập nhật thành Công", Toast.LENGTH_SHORT).show();
-                                            finish();
-                                        }
-                                    }
-
-                                });
-
-
-                            } else {
-                                // Handle failures
-                                // ...
-                            }
-
-                        }
-                    });
-                }else {
-                    Toast.makeText(Xoa_Sua_sanpham.this, "Vui lòng điền đầy đủ!!!", Toast.LENGTH_SHORT).show();
-                }
+                
             }
-        });*/
+        });
     }
     private void loaddata(){
         Intent intent = getIntent();
