@@ -66,11 +66,12 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         tensp = findViewById(R.id.edit_cntensp);
         gia = findViewById(R.id.edit_cngiasp);
         soluong = findViewById(R.id.edit_cnsoluongsp);
-        mota = findViewById(R.id.edit_mota);
+        mota = findViewById(R.id.edit_cnmota);
         diachi = findViewById(R.id.edit_cndiachi);
         sdt = findViewById(R.id.edit_cnsdt);
         themhinhsp =findViewById(R.id.cnanhsanpham);
         btn_capnhatsp = findViewById(R.id.btn_capnhatsp1);
+        btnxoasp = findViewById(R.id.btn_xoasp);
         //masp = findViewById(R.id.ma_sp);
 
         String dm[] = {"Tivi","Loa","Amly","Linh kiện","Dàn máy"};
@@ -98,8 +99,6 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         themhinhsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            /*    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, SELECT_PICTURE);*/
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(pickPhoto , SELECT_PICTURE);
@@ -107,7 +106,7 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         });
 
 
-        btnxoasp = findViewById(R.id.btn_xoasp);
+
         btnxoasp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,8 +117,8 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         btn_capnhatsp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CapNhatSP();
 
-                
             }
         });
     }
@@ -138,12 +137,37 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         //masp.setText(intent.getStringExtra("id"));
         idmasp = intent.getStringExtra("id");
     }
+    private void CapNhatSP(){
+        reference = FirebaseDatabase.getInstance().getReference().child("Sanpham");
+        Query query = reference.orderByChild("id").equalTo(idmasp);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    reference.child(idmasp).child("tensp").setValue(tensp.getText().toString().trim());
+                    reference.child(idmasp).child("giasp").setValue(gia.getText().toString().trim());
+                    reference.child(idmasp).child("mota").setValue(mota.getText().toString().trim());
+                    reference.child(idmasp).child("sdt").setValue(sdt.getText().toString().trim());
+                    reference.child(idmasp).child("diachi").setValue(diachi.getText().toString().trim());
+                    reference.child(idmasp).child("soluongsp").setValue(soluong.getText().toString().trim());
+                    reference.child(idmasp).child("thuonghieusp").setValue(thuonghieu.getSelectedItem().toString().trim());
+                    reference.child(idmasp).child("loaisp").setValue(danhmuc.getSelectedItem().toString().trim());
+                    reference.child(idmasp).child("madein").setValue(madein.getSelectedItem().toString().trim());
+                    Toast.makeText(Xoa_Sua_sanpham.this,"Cập nhật thành công",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
     private  void xoasp(){
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (which == DialogInterface.BUTTON_POSITIVE) {
-                    reference = FirebaseDatabase.getInstance().getReference().child("sanpham");
+                    reference = FirebaseDatabase.getInstance().getReference().child("Sanpham");
                     Query query = reference.orderByChild("id").equalTo(idmasp);
                     query.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -164,7 +188,7 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
             }
         };
         AlertDialog.Builder builder = new AlertDialog.Builder(Xoa_Sua_sanpham.this);
-        builder.setMessage("Bạn muốn xóa sản phẩm?").setPositiveButton("Yes", onClickListener)
+        builder.setMessage("Bạn có chắc muốn xóa sản phẩm?").setPositiveButton("Yes", onClickListener)
                 .setNegativeButton("No", onClickListener).show();
     }
 }

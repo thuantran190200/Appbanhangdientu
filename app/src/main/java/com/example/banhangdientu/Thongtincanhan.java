@@ -77,7 +77,6 @@ public class Thongtincanhan extends AppCompatActivity {
                     MainActivity.sdt = sdt1.getText().toString();
                     MainActivity.diachi = diachi1.getText().toString();
                     MainActivity.gioitinh = gioitinh.getSelectedItem().toString();
-
                     reference.child(MainActivity.tendn).child("hoten").setValue(MainActivity.hoten);
                     reference.child(MainActivity.tendn).child("sdt").setValue(MainActivity.sdt);
                     reference.child(MainActivity.tendn).child("diachi").setValue(MainActivity.diachi);

@@ -49,7 +49,7 @@ public class Capnhapsanpham extends AppCompatActivity {
                 intent.putExtra("mota",listsanpham.get(position).getMota());
                 intent.putExtra("madein",listsanpham.get(position).getMadein());
                 intent.putExtra("diachi",listsanpham.get(position).getDiachi());
-                intent.putExtra("sodienthoai",listsanpham.get(position).getSdt());
+                intent.putExtra("sdt",listsanpham.get(position).getSdt());
                 intent.putExtra("id",listsanpham.get(position).getId());
 
                 startActivity(intent);
@@ -67,20 +67,20 @@ public class Capnhapsanpham extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()){
                     String key = ds.getKey();
+                    String id = ds.child("id").getValue(String.class);
                     String anhsp = ds.child("anhsp").getValue(String.class);
                     String tensp = ds.child("tensp").getValue(String.class);
                     String giasp = ds.child("giasp").getValue(String.class);
                     String diachi = ds.child("diachi").getValue(String.class);
-                    String mota = ds.child("mota").getValue(String.class);
+                    String mota1 = ds.child("mota").getValue(String.class);
                     String loaisp=ds.child("loaisp").getValue(String.class);
                     String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                     String sdt1 = ds.child("sdt").getValue(String.class);
-                    String soluong= ds.child("spluongsp").getValue(String.class);
-                    String madein = ds.child("madein").getValue(String.class);
+                    String soluong= ds.child("soluongsp").getValue(String.class);
+                    String madein1 = ds.child("madein").getValue(String.class);
 
 
-
-                    Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp,soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
+                    Sanpham sanpham = new Sanpham(key, anhsp, tensp, giasp, soluong, thuonghieu, loaisp, mota1, madein1, diachi, sdt1);
                     listsanpham.add(sanpham);
                 }
                 sanphamAdapter.notifyDataSetChanged();
