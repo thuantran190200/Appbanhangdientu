@@ -87,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_cndiachi"
             android:inputType="phone"
+            android:maxLength="10"
             android:layout_marginTop="5dp"
             android:hint="số điện thoạt của hàng"/>
         <Button

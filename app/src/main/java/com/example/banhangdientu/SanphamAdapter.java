@@ -50,7 +50,7 @@ public class SanphamAdapter extends BaseAdapter implements Filterable {
         TextView txt1 = convertView.findViewById(R.id.show_tensp);
         txt1.setText(sanpham.getTensp());
         TextView txt2 = convertView.findViewById(R.id.show_giasp);
-        txt2.setText(sanpham.getGiasp());
+        txt2.setText(String.valueOf(sanpham.getGiasp()));
         ImageView imageView = convertView.findViewById(R.id.show_hinhsp);
 
 

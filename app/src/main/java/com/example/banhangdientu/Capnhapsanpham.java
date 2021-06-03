@@ -70,13 +70,13 @@ public class Capnhapsanpham extends AppCompatActivity {
                     String id = ds.child("id").getValue(String.class);
                     String anhsp = ds.child("anhsp").getValue(String.class);
                     String tensp = ds.child("tensp").getValue(String.class);
-                    String giasp = ds.child("giasp").getValue(String.class);
+                    int giasp = ds.child("giasp").getValue(Integer.class);
                     String diachi = ds.child("diachi").getValue(String.class);
                     String mota1 = ds.child("mota").getValue(String.class);
                     String loaisp=ds.child("loaisp").getValue(String.class);
                     String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                     String sdt1 = ds.child("sdt").getValue(String.class);
-                    String soluong= ds.child("soluongsp").getValue(String.class);
+                    int soluong= ds.child("soluongsp").getValue(Integer.class);
                     String madein1 = ds.child("madein").getValue(String.class);
 
 

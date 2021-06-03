@@ -51,8 +51,8 @@ public class ChitietSanpham extends AppCompatActivity {
         String url = intent.getStringExtra("anhsp");
         Picasso.with(this).load(url).into(loadhinh);
         loadtensp.setText(intent.getStringExtra("tensp"));
-        loadgiasp.setText(intent.getStringExtra("giasp")+" "+"VNĐ");
-        loadsoluongsp.setText(intent.getStringExtra("soluongsp")+" "+"cái");
+        loadgiasp.setText(String.valueOf(intent.getIntExtra("giasp",0))+" "+"Đồng");
+        loadsoluongsp.setText(String.valueOf(intent.getIntExtra("soluongsp",0))+" "+"cái");
         loadmota.setText(intent.getStringExtra("mota"));
     }
 }

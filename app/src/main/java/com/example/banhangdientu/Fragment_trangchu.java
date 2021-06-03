@@ -85,13 +85,13 @@ public class Fragment_trangchu extends Fragment {
                     String key = ds.getKey();
                     String anhsp = ds.child("anhsp").getValue(String.class);
                     String tensp = ds.child("tensp").getValue(String.class);
-                    String giasp = ds.child("giasp").getValue(String.class);
+                    int giasp = ds.child("giasp").getValue(Integer.class);
                     String diachi = ds.child("diachi").getValue(String.class);
                     String mota = ds.child("mota").getValue(String.class);
                     String loaisp=ds.child("loaisp").getValue(String.class);
                     String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                     String sdt1 = ds.child("sdt").getValue(String.class);
-                    String soluong= ds.child("soluongsp").getValue(String.class);
+                    int soluong= ds.child("soluongsp").getValue(Integer.class);
                     String madein = ds.child("madein").getValue(String.class);
                     AtomicBoolean isSP = new AtomicBoolean();
                     listsanpham.forEach(sanpham -> {
@@ -101,7 +101,7 @@ public class Fragment_trangchu extends Fragment {
                     });
 
 
-                    Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp,soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
+                    Sanpham sanpham = new Sanpham(key,anhsp, tensp, giasp, soluong,thuonghieu, loaisp, mota, madein, diachi,sdt1);
                     listsanpham.add(sanpham);
                     //code sắp xếp theo thứ tự
                     Collections.sort(listsanpham, new Comparator<Sanpham>() {

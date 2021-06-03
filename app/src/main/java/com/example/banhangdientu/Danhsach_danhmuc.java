@@ -66,13 +66,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
                      String key = ds.getKey();
                      String anhsp = ds.child("anhsp").getValue(String.class);
                      String tensp = ds.child("tensp").getValue(String.class);
-                     String giasp = ds.child("giasp").getValue(String.class);
+                     int giasp = ds.child("giasp").getValue(int.class);
                      String diachi = ds.child("diachi").getValue(String.class);
                      String mota = ds.child("mota").getValue(String.class);
                      String loaisp=ds.child("loaisp").getValue(String.class);
                      String thuonghieu= ds.child("thuonghieusp").getValue(String.class);
                      String sdt1 = ds.child("sdt").getValue(String.class);
-                     String soluong= ds.child("soluongsp").getValue(String.class);
+                     int soluong= ds.child("soluongsp").getValue(int.class);
                      String madein = ds.child("madein").getValue(String.class);
 
                      if (loaisp.equals(tendm)){
@@ -81,7 +81,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
                          Collections.sort(listsanpham, new Comparator<Sanpham>() {
                              @Override
                              public int compare(Sanpham o1, Sanpham o2) {
-                                 if (Integer.parseInt(o1.getGiasp())>Integer.parseInt(o2.getGiasp())){
+                                 if (o1.getGiasp()>o2.getGiasp()){
                                      return 1;
                                  }else {
                                      if (o1.getGiasp()==o2.getGiasp()){

@@ -1,7 +1,8 @@
 package com.example.banhangdientu;
 
 public class Sanpham {
-    String id, anhsp, tensp, giasp, soluongsp, thuonghieusp, loaisp, mota, madein, diachi, sdt;
+    public String id, anhsp, tensp,  thuonghieusp, loaisp, mota, madein, diachi, sdt;
+    public int giasp, soluongsp;
 
 
     public String getId() {
@@ -12,7 +13,26 @@ public class Sanpham {
         this.id = id;
     }
 
-    public Sanpham(String id, String anhsp, String tensp, String giasp, String soluongsp, String thuonghieusp, String loaisp, String mota, String madein, String diachi, String sdt) {
+    public int getSoluongKho() {
+        return soluongKho;
+    }
+
+    public void setSoluongKho(int soluongKho) {
+        this.soluongKho = soluongKho;
+    }
+
+    public int soluongKho;
+    public int getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
+    }
+
+    public int soluong = 0;
+
+    public Sanpham(String id, String anhsp, String tensp, int giasp, int soluongsp, String thuonghieusp, String loaisp, String mota, String madein, String diachi, String sdt) {
         this.id = id;
         this.anhsp = anhsp;
         this.tensp = tensp;
@@ -43,19 +63,19 @@ public class Sanpham {
         this.tensp = tensp;
     }
 
-    public String getGiasp() {
+    public int getGiasp() {
         return giasp;
     }
 
-    public void setGiasp(String giasp) {
+    public void setGiasp(int giasp) {
         this.giasp = giasp;
     }
 
-    public String getSoluongsp() {
+    public int getSoluongsp() {
         return soluongsp;
     }
 
-    public void setSoluongsp(String soluongsp) {
+    public void setSoluongsp(int soluongsp) {
         this.soluongsp = soluongsp;
     }
 

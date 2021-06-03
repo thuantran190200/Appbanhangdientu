@@ -127,8 +127,8 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
         String url = intent.getStringExtra("anhsp");
         Picasso.with(this).load(url).into(themhinhsp);
         tensp.setText(intent.getStringExtra("tensp"));
-        gia.setText(intent.getStringExtra("giasp"));
-        soluong.setText(intent.getStringExtra("soluongsp"));
+        gia.setText(String.valueOf(intent.getIntExtra("giasp",0)));
+        soluong.setText(String.valueOf(intent.getIntExtra("soluongsp",0)));
         //thuonghieu.setText(intent.getStringExtra("thuonghieu"));
         //danhmuc.setText(intent.getStringExtra("loaisp"));
         mota.setText(intent.getStringExtra("mota"));

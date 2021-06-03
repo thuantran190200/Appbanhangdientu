@@ -139,7 +139,9 @@ public class Themsanpham extends AppCompatActivity {
                                 Toast.makeText(Themsanpham.this, "Thành Công", Toast.LENGTH_SHORT).show();
 
                                 String key = Mdata.push().getKey();
-                                Sanpham sanpham = new Sanpham(key, String.valueOf(downloadUri),tensp.getText().toString(),gia.getText().toString(),soluong.getText().toString()
+                                int giasp = Integer.parseInt(gia.getText().toString().trim());
+                                int soluongkho = Integer.parseInt(soluong.getText().toString().trim());
+                                Sanpham sanpham = new Sanpham(key, String.valueOf(downloadUri),tensp.getText().toString(),giasp,soluongkho
                                 ,thuonghieu.getSelectedItem().toString(),danhmuc.getSelectedItem().toString(),mota.getText().toString(),madein.getSelectedItem().toString()
                                 ,diachi.getText().toString(),sdt.getText().toString());
 
