@@ -15,7 +15,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Giaodienchinh extends AppCompatActivity {
@@ -30,6 +33,7 @@ public class Giaodienchinh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giaodienchinh);
 
+        loadData();
 
         Fragment_trangchu fragment_trangchu = new Fragment_trangchu();
         loadFragment(fragment_trangchu);
@@ -91,4 +95,31 @@ public class Giaodienchinh extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void loadData(){
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        /*id = sharedPreferences.getString("id",null);
+        dadangnhap = sharedPreferences.getBoolean("dadangnhap",false);
+        hoten = sharedPreferences.getString("hoten",null);
+        sodienthoai = sharedPreferences.getString("sodienthoai",null);
+        diachi = sharedPreferences.getString("diachi",null);
+        ngaysinh = sharedPreferences.getString("ngaysinh",null);
+        gioitinh = sharedPreferences.getString("gioitinh",null);
+        ngaythamgia = sharedPreferences.getString("ngaythamgia",null);
+        tenLoai = sharedPreferences.getString("tenloai",null);*/
+        Gson gson = new Gson();
+        // below line is to get to string present from our
+        // shared prefs if not present setting it as null.
+        String json = sharedPreferences.getString("listGH", null);
+        // below line is to get the type of our array list.
+        Type type = new TypeToken<ArrayList<Sanpham>>() {}.getType();
+        listspGiohang = gson.fromJson(json, type);
+
+        // checking below if the array list is empty or not
+        if (listspGiohang == null) {
+            // if the array list is empty
+            // creating a new array list.
+            listspGiohang = new ArrayList<>();
+        }
+
+    }
 }
