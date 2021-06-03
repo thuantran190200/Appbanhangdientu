@@ -82,7 +82,7 @@ public class GiohangAdapter extends BaseAdapter {
         textView2.setText("số lượng: " + currentItem.getSoluong());
         Button button2 = convertView.findViewById(R.id.btn_giamsl);
         Giaodienchinh.listspGiohang.forEach(sp -> {
-            if(sp.getId().equals(currentItem.getId()) && sp.getSoluong() >= currentItem.getSoluongKho()){
+            if(sp.getId().equals(currentItem.getId()) && sp.getSoluong() >= currentItem.getSoluongsp()){
                 button.setEnabled(false);
                 button.setBackgroundColor(context.getResources().getColor(R.color.silver));
             }
@@ -94,7 +94,7 @@ public class GiohangAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 currentItem.setSoluong(currentItem.getSoluong()+1);
-                if(currentItem.getSoluong() >= currentItem.getSoluongKho()){
+                if(currentItem.getSoluong() >= currentItem.getSoluongsp()){
                     button.setEnabled(false);
                     button.setBackgroundColor(context.getResources().getColor(R.color.silver));
                 }
