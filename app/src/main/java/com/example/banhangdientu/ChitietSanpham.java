@@ -50,20 +50,19 @@ public class ChitietSanpham extends AppCompatActivity {
                 Toast.makeText(ChitietSanpham.this, "Sản phẩm hiện đã hết hàng.", Toast.LENGTH_SHORT).show();
             }
         });
-        if(sanpham1.getSoluong() == 0){
+       /* if(sanpham1.getSoluong() == 0){
             btn_add_giohang.setEnabled(false);
             btn_add_giohang.setBackgroundColor(getResources().getColor(R.color.silver));
-        }
+        }*/
 
         //----------------------------------------------------------
         btn_add_giohang.setOnClickListener(new View.OnClickListener() {
-
             @RequiresApi(api = Build.VERSION_CODES.N)//????
             @Override
             public void onClick(View v) {
-                Giaodienchinh.listspGiohang.forEach(sanphamGH -> {
-                    if (sanphamGH.getId().equals(sanpham1.getId())) {
-                        sanpham1 = sanphamGH;
+                Giaodienchinh.listspGiohang.forEach(SanphamGH -> {
+                    if (SanphamGH.getId().equals(sanpham1.getId())) {
+                        sanpham1 = SanphamGH;
                     }
                 });
                 if( sanpham1.getSoluong() == 0) {
@@ -106,35 +105,24 @@ public class ChitietSanpham extends AppCompatActivity {
         loadsoluongsp.setText(String.valueOf(intent.getIntExtra("soluongsp",0))+" "+"cái");
         loadmota.setText(intent.getStringExtra("mota"));
 
-        
+
         //load thong tin san pham lấy số lượng(?????)
         Intent intent1 = getIntent();
         String tensp = intent1.getStringExtra("tensp");
         int gia = intent1.getIntExtra("giasp",0);
-        int soluongsp = intent.getIntExtra("soluongsp",0);
+        int soluongsp = intent1.getIntExtra("soluongsp",0);
         String thuonghieu = intent1.getStringExtra("thuonghieusp");
         String loaisp = intent1.getStringExtra("loaisp");
         String mota = intent1.getStringExtra("mota");
-        String diachi = intent1.getStringExtra("diachi");
+        String diachi1 = intent1.getStringExtra("diachi");
         String sdt = intent1.getStringExtra("sdt");
-        String id = intent1.getStringExtra("id");
+        String id1 = intent1.getStringExtra("id");
         String anhsp = intent1.getStringExtra("anhsp");
         String madein = intent1.getStringExtra("madein");
 
-        sanpham1 = new Sanpham(id,anhsp,tensp,gia,soluongsp,thuonghieu,loaisp,mota,madein,diachi,sdt);
+        sanpham1 = new Sanpham(id1,anhsp,tensp,gia,soluongsp,thuonghieu,loaisp,mota,madein,diachi1,sdt);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getSupportActionBar().hide();
-        if (Build.VERSION.SDK_INT >= 21) {
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.red));
-        }
-    }
     private void saveData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

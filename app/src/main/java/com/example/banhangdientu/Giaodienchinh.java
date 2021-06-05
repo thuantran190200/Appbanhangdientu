@@ -26,6 +26,7 @@ public class Giaodienchinh extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Kiemtraketnoi_Internet kiemtraketnoi_internet = new Kiemtraketnoi_Internet();
     public static ArrayList<Sanpham> listspGiohang = new ArrayList<>();
+    public static String id;
     SharedPreferences sharedPreferences;
     public static final  String SHARED_PREFS = "sharedPrefs";
     @Override
@@ -97,15 +98,13 @@ public class Giaodienchinh extends AppCompatActivity {
 
     public void loadData(){
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        /*id = sharedPreferences.getString("id",null);
-        dadangnhap = sharedPreferences.getBoolean("dadangnhap",false);
+        id = sharedPreferences.getString("id",null);
+        /*ktdangnhap = sharedPreferences.getBoolean("ktdangnhap",false);
         hoten = sharedPreferences.getString("hoten",null);
-        sodienthoai = sharedPreferences.getString("sodienthoai",null);
+        sdt = sharedPreferences.getString("sdt",null);
         diachi = sharedPreferences.getString("diachi",null);
-        ngaysinh = sharedPreferences.getString("ngaysinh",null);
         gioitinh = sharedPreferences.getString("gioitinh",null);
-        ngaythamgia = sharedPreferences.getString("ngaythamgia",null);
-        tenLoai = sharedPreferences.getString("tenloai",null);*/
+        loaitk = sharedPreferences.getString("loaitk",null);*/
         Gson gson = new Gson();
         // below line is to get to string present from our
         // shared prefs if not present setting it as null.

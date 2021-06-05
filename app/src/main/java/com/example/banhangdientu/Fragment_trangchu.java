@@ -65,6 +65,12 @@ public class Fragment_trangchu extends Fragment {
                 intent.putExtra("giasp",listsanpham.get(position).getGiasp());
                 intent.putExtra("soluongsp",listsanpham.get(position).getSoluongsp());
                 intent.putExtra("mota",listsanpham.get(position).getMota());
+                intent.putExtra("id",listsanpham.get(position).getId());
+                intent.putExtra("sdt",listsanpham.get(position).getSdt());
+                intent.putExtra("loaisp",listsanpham.get(position).getLoaisp());
+                intent.putExtra("thuonghieusp",listsanpham.get(position).getThuonghieusp());
+                intent.putExtra("madein",listsanpham.get(position).getMadein());
+                intent.putExtra("diachi",listsanpham.get(position).getDiachi());
                 startActivity(intent);
             }
         });

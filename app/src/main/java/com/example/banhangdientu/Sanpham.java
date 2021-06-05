@@ -13,15 +13,6 @@ public class Sanpham {
         this.id = id;
     }
 
-    public int getSoluongKho() {
-        return soluongKho;
-    }
-
-    public void setSoluongKho(int soluongKho) {
-        this.soluongKho = soluongKho;
-    }
-
-    public int soluongKho;
     public int getSoluong() {
         return soluong;
     }
