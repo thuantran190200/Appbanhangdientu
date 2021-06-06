@@ -26,6 +26,7 @@ public class Giaodienchinh extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Kiemtraketnoi_Internet kiemtraketnoi_internet = new Kiemtraketnoi_Internet();
     public static ArrayList<Sanpham> listspGiohang = new ArrayList<>();
+    public static ArrayList<Hoadon> listhoadon = new ArrayList<>();
     public static String id;
     SharedPreferences sharedPreferences;
     public static final  String SHARED_PREFS = "sharedPrefs";
@@ -56,6 +57,10 @@ public class Giaodienchinh extends AppCompatActivity {
 
                     case R.id.nav_giohang:
                         fragment = new Fragment_giohang();
+                        loadFragment(fragment);
+                        return true;
+                    case R.id.nav_giaohang:
+                        fragment = new Giaohang();
                         loadFragment(fragment);
                         return true;
 

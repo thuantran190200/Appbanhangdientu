@@ -27,7 +27,7 @@ public class Fragment_giohang_btn_tinhtien extends Fragment {
     TextView tonggiatien;
     Button btn_xacnhan;
     private int tongtien = 0;
-    private static int tt;
+    public static int tt;
     GiohangAdapter giohangAdapter;
     public Fragment_giohang_btn_tinhtien(){}
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -53,7 +53,8 @@ public class Fragment_giohang_btn_tinhtien extends Fragment {
                     fragmentTransaction.replace(R.id.fragment_giohangtrong, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-
+                    Intent intent = new Intent(getActivity(), Thongtingiaohang.class);
+                    startActivity(intent);
                 }else {
                     Intent intent = new Intent(getActivity(), Dangnhap.class);
                     startActivity(intent);
@@ -68,8 +69,6 @@ public class Fragment_giohang_btn_tinhtien extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //Fragment_giohang.txtChecked.setBackgroundResource(R.drawable.circle);
-        //Fragment_giohang.txtUnchecked.setBackgroundResource(R.drawable.circle2);
         giohangAdapter.notifyDataSetChanged();
         Giaodienchinh.listspGiohang.forEach(Sanpham -> {
             tongtien += (Sanpham.getSoluong()*Sanpham.getGiasp());

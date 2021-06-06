@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nv_choxacnhan"
+    tools:context=".Fragment_Giaohang_Nhanvien_choxacnhan">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_nv_choxacnhan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

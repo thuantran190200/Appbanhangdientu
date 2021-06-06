@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Thongtingiaohang"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/ten_nguoinhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ tên gừi nhận"/>
+        <EditText
+            android:id="@+id/sdt_nn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số điện thoại "
+            android:maxLength="10"
+            android:inputType="phone"
+            android:layout_below="@+id/ten_nguoinhan"/>
+        <EditText
+            android:id="@+id/diachi_gh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ giao hàng"
+            android:layout_below="@+id/sdt_nn"/>
+        <Button
+            android:id="@+id/btn_xacnhandh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diachi_gh"
+            android:text="Xác nhận đơn hàng"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
