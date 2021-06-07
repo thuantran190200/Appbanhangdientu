@@ -1,14 +1,17 @@
 package com.example.banhangdientu;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,7 +23,9 @@ import com.google.gson.Gson;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Thongtingiaohang extends AppCompatActivity {
+
+public class Fragment_Thongtingiaohang extends Fragment {
+
     EditText hoten, sdt, diachi;
     Button btn_xacnhan;
     Chitiethoadon chitiethoadon;
@@ -31,15 +36,16 @@ public class Thongtingiaohang extends AppCompatActivity {
     DatabaseReference referenceCTHD;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thongtingiaohang);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment__thongtingiaohang, container, false);
 
         //----------------------------------------
-        hoten = findViewById(R.id.ten_nguoinhan);
-        sdt = findViewById(R.id.sdt_nn);
-        diachi = findViewById(R.id.diachi_gh);
-        btn_xacnhan = findViewById(R.id.btn_xacnhandh);
+        hoten = (EditText) view.findViewById(R.id.ten_nguoinhan);
+        sdt = (EditText) view.findViewById(R.id.sdt_nn);
+        diachi = (EditText) view.findViewById(R.id.diachi_gh);
+        btn_xacnhan = (Button) view.findViewById(R.id.btn_xacnhandh);
         referenceHD = FirebaseDatabase.getInstance().getReference().child("Chitietdonhang");
         referenceCTHD = FirebaseDatabase.getInstance().getReference().child("Hoadon");
         hoten.setText(MainActivity.hoten);
@@ -60,11 +66,11 @@ public class Thongtingiaohang extends AppCompatActivity {
                     myCalendar.add(Calendar.DATE,2);
                     String ngaytaodon = sdf.format(myCalendar.getTime());
                     String ngayhoanthanh = "";
-                    String trangthai = "Chờ Xác Nhận";
+                    String trangthai = "Chờ giao hàng";
                     Hoadon hoaDon = new Hoadon(keyHD,ngaytaodon,ngayhoanthanh,hoten1,sdt1,diachi1,trangthai,Giaodienchinh.id,Fragment_giohang_btn_tinhtien.tt);
                     Giaodienchinh.listhoadon.add(hoaDon);
                     referenceHD.child(keyHD).setValue(hoaDon);
-                    Toast.makeText(Thongtingiaohang.this, "Tạo đơn hàng thành công", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Tạo đơn hàng thành công", Toast.LENGTH_LONG).show();
                     Giaodienchinh.listspGiohang.forEach(sanPham -> {
                         String keyCTHD = referenceCTHD.push().getKey();
                         String idSP = sanPham.getId();
@@ -74,15 +80,16 @@ public class Thongtingiaohang extends AppCompatActivity {
                     });
                     Giaodienchinh.listspGiohang.clear();
                     Savedata();
-                    Intent intent = new Intent(Thongtingiaohang.this,Fragment_Giaohang_Khachhang.class);
+                    Intent intent = new Intent(getActivity(),Fragment_Giaohang_Khachhang.class);
                     intent.putExtra("idHD",keyHD);
                     startActivity(intent);
                 }
             }
         });
 
-    }
 
+        return view;
+    }
     private Boolean ktdiachi (){
         String val = diachi.getText().toString();
         if(val.isEmpty()){
@@ -121,7 +128,7 @@ public class Thongtingiaohang extends AppCompatActivity {
         super.onResume();
     }
     private void Savedata(){
-        SharedPreferences sharedPreferences = this.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         // creating a new variable for gson.
         Gson gson = new Gson();

@@ -19,7 +19,7 @@ import android.widget.TextView;
  */
 public class Fragment_thongtin_Nhanvien extends Fragment {
 
-    Button btn_ttcanhan, btn_doi_mk, btn_ql_dh, btn_cn_sp, btn_them_sp, btn_dang_xuat;
+    Button btn_ttcanhan, btn_doi_mk, btn_ql_dh, btn_cn_sp, btn_them_sp, btn_dang_xuat, btn_ttvc;
     TextView hoten, sdt;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -79,6 +79,7 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
         btn_dang_xuat = (Button) view.findViewById(R.id.btn_dangxuat);
         hoten.setText(MainActivity.hoten);
         sdt.setText(MainActivity.sdt);
+        btn_ttvc = (Button) view.findViewById(R.id.btn_nv_ttvc);
 
 
         //---------------------------------------------
@@ -129,6 +130,13 @@ public class Fragment_thongtin_Nhanvien extends Fragment {
             }
         });
 
+        btn_ttvc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(getActivity(), Giaohang_Nhanvien.class);
+                startActivity(intent5);
+            }
+        });
 
         return view;
     }

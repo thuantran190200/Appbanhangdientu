@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class Fragment_thongtin_Khachhang extends Fragment {
 
     TextView hoten1, sdt1;
-    Button btn_ttcanhan, btn_doi_mk, btn_dang_xuat;
+    Button btn_ttcanhan, btn_doi_mk, btn_dang_xuat, btn_qtvc;
 
     //----------------------------
     // TODO: Rename parameter arguments, choose names that match
@@ -75,6 +75,7 @@ public class Fragment_thongtin_Khachhang extends Fragment {
         btn_ttcanhan = (Button) view.findViewById(R.id.btn_ttcn);
         btn_doi_mk = (Button) view.findViewById(R.id.btn_doimk);
         btn_dang_xuat = (Button) view.findViewById(R.id.btn_dangxuat_kh);
+        btn_qtvc = (Button) view.findViewById(R.id.btn_quatrinhvanchuyen);
 
 
         //--------------------------------------------------------------------------------
@@ -102,6 +103,13 @@ public class Fragment_thongtin_Khachhang extends Fragment {
             }
         });
 
+        btn_qtvc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getActivity(), Fragment_Giaohang_Khachhang.class);
+                startActivity(intent1);
+            }
+        });
 
         return view;
     }

@@ -10,12 +10,12 @@ import java.util.ArrayList;
 public class Donmua_admin_viewadapter extends FragmentPagerAdapter {
     ArrayList<Fragment> mfragmentList1;
     ArrayList<String> mfragmenttittleList1;
-    private String[] tabtitles = new String[]{"Chờ xác nhận","Đang giao","Đã giao","Hủy ĐH"};
+    private String[] tabtitles = new String[]{"Chờ giao hàng","Đã giao","Hủy ĐH"};
     @Override
     public CharSequence getPageTitle(int position) {
         return tabtitles[position];
     }
-    public Donmua_admin_viewadapter(@NonNull FragmentManager fm) {
+     public Donmua_admin_viewadapter(@NonNull FragmentManager fm) {
         super(fm);
         mfragmentList1 = new ArrayList<>();
         mfragmenttittleList1 = new ArrayList<>();
@@ -28,10 +28,8 @@ public class Donmua_admin_viewadapter extends FragmentPagerAdapter {
             case 0:
                 return new Fragment_Giaohang_Nhanvien_choxacnhan();
             case 1:
-                return new Fragment_Giaohang_Nhanvien_danggiao();
-            case 2:
                 return new Fragment_Giaohang_Nhanvien_dagiao();
-            case 3:
+            case 2:
                 return new Fragment_Giaohang_Nhanvien_HuyDH();
             default:
                 throw new RuntimeException("Invalid tab position");
@@ -39,7 +37,7 @@ public class Donmua_admin_viewadapter extends FragmentPagerAdapter {
     }
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
     public void addFragment(Fragment fragment,String title){
         mfragmentList1.add(fragment);

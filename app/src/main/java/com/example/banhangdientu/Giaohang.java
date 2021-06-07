@@ -29,7 +29,7 @@ public class Giaohang extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if(MainActivity.ktdangnhap == true && MainActivity.loaitk.equals("admin")){
+/*        if(MainActivity.ktdangnhap == true && MainActivity.loaitk.equals("admin")){
             Fragment_Giaohang_Nhanvien giaohang_nhanvien = new Fragment_Giaohang_Nhanvien();
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.Giaohang,giaohang_nhanvien);
@@ -39,7 +39,7 @@ public class Giaohang extends Fragment {
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.Giaohang, giaohang_khachhang);
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
 }

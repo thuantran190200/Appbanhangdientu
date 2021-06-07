@@ -48,13 +48,12 @@ public class Fragment_giohang_btn_tinhtien extends Fragment {
                 if (MainActivity.ktdangnhap&& Giaodienchinh.listspGiohang.size() == 0) {
                     Toast.makeText(getActivity(), "Giỏ hàng đang trống", Toast.LENGTH_SHORT).show();
                 } else if(MainActivity.ktdangnhap && Giaodienchinh.listspGiohang.size() > 0){
-                    Fragment_giohang fragment = new Fragment_giohang();
-                    FragmentTransaction fragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction();
+                    Fragment_Thongtingiaohang fragment = new Fragment_Thongtingiaohang();
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment_giohangtrong, fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                    Intent intent = new Intent(getActivity(), Thongtingiaohang.class);
-                    startActivity(intent);
+
                 }else {
                     Intent intent = new Intent(getActivity(), Dangnhap.class);
                     startActivity(intent);

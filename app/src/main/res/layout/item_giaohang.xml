@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/FloralWhite"
+    android:id="@+id/item_khunggh"
+    android:layout_marginBottom="10dp">
+    <ImageView
+        android:id="@+id/img_hinhgiaohang"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/icon_giaohang"/>
+    <TextView
+        android:id="@+id/gh_madonhang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_hinhgiaohang"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Mã đơn hàng"/>
+    <TextView
+        android:id="@+id/gh_ngaygiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dự kiến giao hàng"
+        android:layout_below="@+id/img_hinhgiaohang"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/gh_sotien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số tiền"
+        android:textColor="@color/red"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/img_hinhgiaohang"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"/>
+
+</RelativeLayout>

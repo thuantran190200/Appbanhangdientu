@@ -17,17 +17,12 @@ public class Fragment_giohang extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_giohang, container, false);
-
-
         if (savedInstanceState == null){
             Fragment_giohang_btn_tinhtien fragment = new Fragment_giohang_btn_tinhtien();
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.fragment_giohangtrong, fragment);
             fragmentTransaction.commit();
         }
-
-
-
         return view;
     }
 }

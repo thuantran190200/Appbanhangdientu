@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Banhangdientu">
-        <activity android:name=".Thongtingiaohang"></activity>
+        <activity android:name=".Lienhekhachhang"></activity>
+        <activity android:name=".Giaohang_Nhanvien" />
+        <activity android:name=".Thongtinhoadon_Giaohang_Nhanvien" />
         <activity android:name=".Doimatkhau" />
         <activity android:name=".Timkiem_sp" />
         <activity android:name=".Danhsach_danhmuc" />
@@ -21,6 +23,7 @@
         <activity android:name=".ChitietSanpham" />
         <activity android:name=".Themsanpham" />
         <activity android:name=".Giaodienchinh" />
+        <activity android:name=".Fragment_Giaohang_Khachhang" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

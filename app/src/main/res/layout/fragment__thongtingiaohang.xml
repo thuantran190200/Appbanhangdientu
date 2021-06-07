@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_Thongtingiaohang">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/gt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ giao hàng"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/bungee"
+            />
+
+        <TextView
+            android:id="@+id/gt_hoten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gt"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:text="Họ tên người nhận:"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/ten_nguoinhan"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/gt_hoten"
+            android:layout_below="@+id/gt"
+            android:hint="Họ tên gừi nhận"/>
+        <TextView
+            android:id="@+id/gt_sdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại:"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/gt_hoten"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/sdt_nn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/gt_sdt"
+            android:layout_marginLeft="40dp"
+            android:hint="Số điện thoại "
+            android:maxLength="10"
+            android:inputType="phone"
+            android:layout_below="@+id/ten_nguoinhan"/>
+        <TextView
+            android:id="@+id/gt_diachi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ:"
+            android:layout_below="@+id/gt_sdt"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/diachi_gh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ giao hàng"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/gt_diachi"/>
+        <Button
+            android:id="@+id/btn_xacnhandh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diachi_gh"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="Xác nhận đơn hàng"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_xacnhandh"
+            android:src="@drawable/nhanvienvanchuyen"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

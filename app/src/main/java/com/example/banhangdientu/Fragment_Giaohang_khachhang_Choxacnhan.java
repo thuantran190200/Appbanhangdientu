@@ -18,17 +18,6 @@ public class Fragment_Giaohang_khachhang_Choxacnhan extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__giaohang_khachhang__choxacnhan, container, false);
-
-
-
-
-
-
-
-
-
-
-
         return view;
     }
 }
