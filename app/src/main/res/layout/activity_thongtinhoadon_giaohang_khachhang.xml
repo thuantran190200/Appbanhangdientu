@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Thongtinhoadon_Giaohang_Khachhang">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:id="@+id/top">
+            <ImageButton
+                android:id="@+id/back_thoat11"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_arrow_back"
+                android:background="@color/yellow"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông tin Đơn hàng"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:fontFamily="@font/bungee"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="450dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_tthd_kh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tt_GH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin giao hàng"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:id="@+id/ht"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tt_GH"
+                android:textSize="18dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:text="Họ tên khách hàng: "
+                />
+
+            <TextView
+                android:id="@+id/hoten_nn001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ tên"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:layout_below="@+id/tt_GH"
+                android:layout_toRightOf="@+id/ht"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tt_sdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại:"
+                android:layout_below="@+id/ht"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:layout_marginLeft="12dp"/>
+            <TextView
+                android:id="@+id/sdtgh01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0123456987"
+                android:layout_toRightOf="@+id/tt_sdt"
+                android:layout_below="@+id/hoten_nn001"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tt_dc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tt_sdt"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="12dp"
+                android:text="Địa chỉ:"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/diachi110"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tt_sdt"
+                android:textSize="18dp"
+                android:text="TP.hcm"
+                android:layout_toRightOf="@+id/tt_dc"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="110dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_dagiaohang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liên hệ cửa hàng"
+                android:backgroundTint="@color/LimeGreen"
+                android:textColor="@color/black"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/btn_huydonhang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hủy đơn hàng"
+                android:backgroundTint="@color/red"
+                android:textColor="@color/black"
+                android:layout_below="@+id/btn_dagiaohang1"
+                android:layout_marginLeft="130dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

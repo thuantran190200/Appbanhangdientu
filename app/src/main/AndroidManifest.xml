@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Banhangdientu">
-        <activity android:name=".Lienhekhachhang"></activity>
+        <activity android:name=".Thongtinhoadon_Giaohang_Khachhang"></activity>
+        <activity android:name=".Lienhekhachhang" />
         <activity android:name=".Giaohang_Nhanvien" />
         <activity android:name=".Thongtinhoadon_Giaohang_Nhanvien" />
         <activity android:name=".Doimatkhau" />

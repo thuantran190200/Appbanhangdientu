@@ -19,10 +19,30 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/img_hinhgiaohang"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Mã đơn hàng"/>
+    <TextView
+        android:id="@+id/tenkh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gh_madonhang"
+        android:text="Khách hàng"
+        android:layout_toRightOf="@+id/img_hinhgiaohang"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/diachi_ghkh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tenkh"
+        android:text="Địa chỉ: "
+        android:layout_toRightOf="@+id/img_hinhgiaohang"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/gh_ngaygiao"
         android:layout_width="wrap_content"

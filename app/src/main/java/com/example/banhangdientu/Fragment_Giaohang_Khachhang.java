@@ -31,6 +31,7 @@ public class Fragment_Giaohang_Khachhang extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpaper);
         back = findViewById(R.id.thoat_111);
+
         /*Intent intent = getIntent();
         String idHD = intent.getStringExtra("idHD");*/
 

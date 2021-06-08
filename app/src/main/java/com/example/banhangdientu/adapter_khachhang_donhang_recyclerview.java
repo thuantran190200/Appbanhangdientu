@@ -14,32 +14,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class adapter_admin_donhang_recyclerview extends RecyclerView.Adapter<adapter_admin_donhang_recyclerview.ViewHolder> {
+public class adapter_khachhang_donhang_recyclerview extends RecyclerView.Adapter<adapter_khachhang_donhang_recyclerview.ViewHolder> {
     private Context mContext;
     private ArrayList<Hoadon> hoadons ;
-    public adapter_admin_donhang_recyclerview(Context mContext, ArrayList<Hoadon> hoadons) {
+    public adapter_khachhang_donhang_recyclerview(Context mContext, ArrayList<Hoadon> hoadons) {
         this.mContext = mContext;
         this.hoadons = hoadons;
     }
     @NonNull
     @Override
-    public adapter_admin_donhang_recyclerview.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public adapter_khachhang_donhang_recyclerview.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_giaohang,parent,false);
-        return new adapter_admin_donhang_recyclerview.ViewHolder(view);
+        return new adapter_khachhang_donhang_recyclerview.ViewHolder(view);
     }
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull adapter_admin_donhang_recyclerview.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull adapter_khachhang_donhang_recyclerview.ViewHolder holder, int position) {
 
         holder.txtmadonhang.setText("Mã đơn hàng: "+hoadons.get(position).getId());
         holder.tenkh.setText("Tên khách hàng: "+hoadons.get(position).getHoten());
         holder.diachigh.setText("Địa chỉ GH: "+hoadons.get(position).getDiachi());
-        holder.txtngaydukien.setText("Hàng sẽ được chuyển sau: "+hoadons.get(position).getNgaytaoHD());
+        holder.txtngaydukien.setText("Hàng sẽ được nhận sau: "+hoadons.get(position).getNgaytaoHD());
         holder.txttongtien.setText("Số tiền: "+String.valueOf(hoadons.get(position).getTongtien())+" đ");
         holder.rlItemHD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,Thongtinhoadon_Giaohang_Nhanvien.class);
+                Intent intent = new Intent(mContext,Thongtinhoadon_Giaohang_Khachhang.class);
                 intent.putExtra("idHD",hoadons.get(position).getId());
                 intent.putExtra("tongtien",hoadons.get(position).getTongtien());
                 intent.putExtra("hoten",hoadons.get(position).getHoten());
@@ -69,4 +69,5 @@ public class adapter_admin_donhang_recyclerview extends RecyclerView.Adapter<ada
             rlItemHD = itemView.findViewById(R.id.item_khunggh);
         }
     }
+
 }
