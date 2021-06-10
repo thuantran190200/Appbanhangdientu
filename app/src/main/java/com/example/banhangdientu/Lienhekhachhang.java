@@ -32,7 +32,7 @@ public class Lienhekhachhang extends AppCompatActivity {
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // makePhoneCall();
+                makePhoneCall();
             }
         });
 
@@ -41,7 +41,7 @@ public class Lienhekhachhang extends AppCompatActivity {
         Intent intent = getIntent();
         show_sdt.setText(intent.getStringExtra("sdt"));
     }
-   /* private void makePhoneCall() {
+    private void makePhoneCall() {
         String number = show_sdt.getText().toString();
         if (number.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(Lienhekhachhang.this,
@@ -56,10 +56,9 @@ public class Lienhekhachhang extends AppCompatActivity {
             Toast.makeText(Lienhekhachhang.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
         }
     }
-   // @SuppressLint("MissingSuperCall")
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        // super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CALL) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -68,5 +67,5 @@ public class Lienhekhachhang extends AppCompatActivity {
                 Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
             }
         }
-    }*/
+    }
 }
