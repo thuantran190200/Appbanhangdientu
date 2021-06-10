@@ -77,17 +77,6 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:textStyle="bold"
-            android:text="Tiến trình vận chuyển                         >"
-            android:backgroundTint="@color/yellow"
-            android:textColor="@color/black"/>
-        <Button
-            android:id="@+id/btn_nv_qldh"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_below="@+id/btn_nv_ttvc"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:textStyle="bold"
             android:text="Quản lý đơn hàng                                 >"
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"/>
@@ -96,7 +85,7 @@
             android:id="@+id/btn_nv_capnhatsp"
             android:layout_width="400dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/btn_nv_qldh"
+            android:layout_below="@+id/btn_nv_ttvc"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:textStyle="bold"
@@ -127,7 +116,5 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:fontFamily="@font/bungee"/>
-
-
 
 </FrameLayout>

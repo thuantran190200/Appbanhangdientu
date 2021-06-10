@@ -145,11 +145,11 @@ public class Xoa_Sua_sanpham extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     reference.child(idmasp).child("tensp").setValue(tensp.getText().toString().trim());
-                    reference.child(idmasp).child("giasp").setValue(gia.getText().toString().trim());
+                    reference.child(idmasp).child("giasp").setValue(Integer.parseInt(gia.getText().toString().trim()));
                     reference.child(idmasp).child("mota").setValue(mota.getText().toString().trim());
                     reference.child(idmasp).child("sdt").setValue(sdt.getText().toString().trim());
                     reference.child(idmasp).child("diachi").setValue(diachi.getText().toString().trim());
-                    reference.child(idmasp).child("soluongsp").setValue(soluong.getText().toString().trim());
+                    reference.child(idmasp).child("soluongsp").setValue(Integer.parseInt(soluong.getText().toString().trim()));
                     reference.child(idmasp).child("thuonghieusp").setValue(thuonghieu.getSelectedItem().toString().trim());
                     reference.child(idmasp).child("loaisp").setValue(danhmuc.getSelectedItem().toString().trim());
                     reference.child(idmasp).child("madein").setValue(madein.getSelectedItem().toString().trim());

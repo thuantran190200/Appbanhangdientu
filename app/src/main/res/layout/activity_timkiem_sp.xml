@@ -6,14 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".Timkiem_sp">
 
-    <EditText
-        android:id="@+id/search"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="tìm kiếm"/>
+        android:background="@color/Gold">
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_search"
+            android:textSize="22dp"
+            android:hint="Tìm kiếm sản phẩm(vd: tivi, loa,...)"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/show_sp_timkiem"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

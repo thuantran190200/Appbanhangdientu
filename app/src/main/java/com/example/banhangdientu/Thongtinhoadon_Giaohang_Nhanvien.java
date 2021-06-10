@@ -82,6 +82,7 @@ public class Thongtinhoadon_Giaohang_Nhanvien extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Thongtinhoadon_Giaohang_Nhanvien.this, Lienhekhachhang.class);
+                intent.putExtra("sdt",sdt.getText());
                 startActivity(intent);
             }
         });

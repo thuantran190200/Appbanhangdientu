@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Banhangdientu">
-        <activity android:name=".Thongtinhoadon_Giaohang_Khachhang"></activity>
+        <activity android:name=".Lienhecuahang"></activity>
+        <activity android:name=".Thongtinhoadon_Giaohang_Khachhang" />
         <activity android:name=".Lienhekhachhang" />
         <activity android:name=".Giaohang_Nhanvien" />
         <activity android:name=".Thongtinhoadon_Giaohang_Nhanvien" />
@@ -37,5 +38,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>

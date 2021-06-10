@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,7 +35,7 @@ public class Fragment_trangchu extends Fragment {
     ArrayList<Sanpham> listsanpham = new ArrayList<>();
     SanphamAdapter sanphamAdapter;
     GridView gridView;
-    Button timkiem;
+    TextView timkiem;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +43,7 @@ public class Fragment_trangchu extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trangchu, container, false);
 
-        timkiem = (Button) view.findViewById(R.id.timkiem);
+        timkiem = (TextView) view.findViewById(R.id.timkiem);
         timkiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
