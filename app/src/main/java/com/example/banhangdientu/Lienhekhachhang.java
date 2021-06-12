@@ -20,14 +20,22 @@ public class Lienhekhachhang extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
     EditText show_sdt;
-    ImageButton btn_call;
+    ImageButton btn_call, thoat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lienhekhachhang);
         show_sdt = findViewById(R.id.lhkh);
         btn_call = findViewById(R.id.goi_kh);
+        thoat = findViewById(R.id.thoat_goi);
         loaddata();
+
+        thoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
