@@ -6,10 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".Danhsach_danhmuc">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/yellow">
+        <ImageButton
+            android:id="@+id/thoat123"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@color/Gold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Sản phẩm trong danh mục"
+            android:fontFamily="@font/bungee"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
     <GridView
         android:id="@+id/grib_view_dsdm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>

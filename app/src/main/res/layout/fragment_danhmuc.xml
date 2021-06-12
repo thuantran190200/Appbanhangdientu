@@ -5,10 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".Fragment_danhmuc">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Danh mục TỪng sản phẩm"
+            android:textSize="20dp"
+            android:fontFamily="@font/bungee"
+            android:gravity="center"
+            android:background="@color/yellow"
+            android:textColor="@color/black"/>
+    </LinearLayout>
     <GridView
         android:id="@+id/grib_view_dm"
         android:layout_width="match_parent"
+        android:layout_marginTop="60dp"
         android:layout_height="wrap_content"
         android:numColumns="2"/>
 </FrameLayout>

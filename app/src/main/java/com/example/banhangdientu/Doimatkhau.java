@@ -40,6 +40,13 @@ public class Doimatkhau extends AppCompatActivity {
         edt_mk_moi1 = findViewById(R.id.mk_moi1);
         btn_luu = findViewById(R.id.btn_doimktk);
 
+        btn_thoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         btn_luu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
