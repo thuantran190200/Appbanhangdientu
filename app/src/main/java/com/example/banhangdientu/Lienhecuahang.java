@@ -27,10 +27,10 @@ public class Lienhecuahang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lienhecuahang);
 
-        setContentView(R.layout.activity_lienhekhachhang);
         show_sdt = findViewById(R.id.lhch);
         btn_call = findViewById(R.id.goi_ch);
         thoat = findViewById(R.id.thoat_goi1);
+        show_sdt.getText().toString();
         //loaddata();
 
         thoat.setOnClickListener(new View.OnClickListener() {

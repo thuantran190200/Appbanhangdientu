@@ -54,6 +54,14 @@ public class Thongtinhoadon_Giaohang_Khachhang extends AppCompatActivity {
         btn_lienhe = findViewById(R.id.btn_dagiaohang1);
         btn_huydh = findViewById(R.id.btn_huydonhang1);
 
+        btn_lienhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Thongtinhoadon_Giaohang_Khachhang.this, Lienhecuahang.class);
+                startActivity(intent);
+            }
+        });
+
         btn_huydh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

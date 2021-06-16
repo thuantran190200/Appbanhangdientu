@@ -151,8 +151,8 @@ public class GiohangAdapter extends BaseAdapter {
                         }
                     };
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("Bạn muốn xóa sản phẩm?").setPositiveButton("Yes", dialogClickListener)
-                            .setNegativeButton("No", dialogClickListener).show();
+                    builder.setMessage("Bạn muốn xóa sản phẩm?").setPositiveButton("Có", dialogClickListener)
+                            .setNegativeButton("Không", dialogClickListener).show();
                 }
 
             }
